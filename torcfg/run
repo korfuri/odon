@@ -1,0 +1,5 @@
+#!/bin/bash
+mkdir -P /var/run/tor
+chown root:root /var/run/tor/odon
+chmod 700 /var/run/tor
+tor
