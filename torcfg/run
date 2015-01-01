@@ -1,5 +1,12 @@
 #!/bin/bash
-mkdir -P /var/run/tor
-chown root:root /var/run/tor/odon
-chmod 700 /var/run/tor
-tor
+echo 'a'
+chown root:root /var/lib/tor/
+echo 'b'
+python /etc/tor/odon.py &
+echo 'c'
+tor &
+echo 'd'
+wait
+echo 'e'
+wait
+echo 'f'
