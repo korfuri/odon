@@ -1,12 +1,6 @@
 #!/bin/bash
-echo 'a'
 chown root:root /var/lib/tor/
-echo 'b'
 python /etc/tor/odon.py &
-echo 'c'
 tor &
-echo 'd'
 wait
-echo 'e'
 wait
-echo 'f'
