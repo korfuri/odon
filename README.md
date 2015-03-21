@@ -38,7 +38,7 @@ Status
 ======
 
 This is just a quick experiment I came up with during the last hours of 31C3.
-Maybe I will never complete it.
+It is not used in production anywhere. But it is usable.
 
 Development/running
 ===================
@@ -50,3 +50,18 @@ container.
 	$ docker run -p 9051 -p 5000 tor
 
 To use odon from a browser, navigate to `http://localhost:5000/`.
+
+Integrating with your tor service
+=================================
+
+You need to set up your own hidden service to start with. This service
+will lead to a Python application handler, e.g. using flask. Look at
+the provided code on how flask is integrated to generate hostnames on
+demand.
+
+Odon needs to have read access to the Tor config. On many systems this
+means chmodding a lot of files, or running Odon as root (you probably
+shouldn't do that). Adapting the existing docker-based solution may be
+preferrable for your needs. Be aware, however, that Docker doesn't
+provide a security barrier, and jobs running as root in a docker
+container may escape the container.
